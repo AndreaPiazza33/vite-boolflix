@@ -61,8 +61,6 @@ di “card” in cui lo sfondo è rappresentato dall’immagine di copertina (co
 la poster_path con w342)
 ● Andando con il mouse sopra una card (on hover), appaiono le informazioni
 aggiuntive già prese nei punti precedenti più la overview
-Mockup:
-Mockup (on hover sul primo elemento):
 
 ## Consigli:
 
