@@ -8,6 +8,9 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <AppHeader></AppHeader>
+  <AppMain></AppMain>
+</template>
 
-<style></style>
+<style lang="scss"></style>
