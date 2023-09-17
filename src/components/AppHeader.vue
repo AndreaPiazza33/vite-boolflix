@@ -1,5 +1,12 @@
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      search: "",
+    };
+  },
+  emits: ["filtered-search"],
+};
 </script>
 
 <template>
@@ -7,8 +14,10 @@ export default {};
   <div>BOOLFLIX</div>
   <!--searchbar-->
   <div>
-    <input type="text" />
-    <button>Search</button>
+    <form role="search" @submit.prevent="$emit('filtered-search', search)">
+      <input type="search" placeholder="Search a movie" v-model="search" />
+      <button type="submit">Search</button>
+    </form>
   </div>
 </template>
 

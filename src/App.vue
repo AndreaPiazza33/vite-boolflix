@@ -13,12 +13,12 @@ export default {
   },
   methods: {
     /*chiamata film*/
-    fetchMovie() {
+    fetchMovie(queryString) {
       axios
         .get("https://api.themoviedb.org/3/search/movie?", {
           /*parametri della chiamata*/
           params: {
-            query: "simpsons",
+            query: queryString,
             api_key: "e20fa320327eeb0c5e15c0385a71f9e5",
           },
         })
@@ -33,16 +33,14 @@ export default {
         });
     },
   },
-  created() {
-    this.fetchMovie();
-  },
+
   /*componenti */
   components: { AppMain, AppHeader },
 };
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader @filtered-search="fetchMovie"></AppHeader>
   <AppMain></AppMain>
 </template>
 
