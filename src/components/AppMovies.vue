@@ -6,6 +6,11 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <!--contenitore dei film-->
+  <div>
+    <AppMoviesList></AppMoviesList>
+  </div>
+</template>
 
 <style></style>
