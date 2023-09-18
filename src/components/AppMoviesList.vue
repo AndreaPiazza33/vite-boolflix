@@ -4,6 +4,10 @@ export default {
   data() {
     return {
       store,
+      posterUrl: {
+        baseUrl: "https://image.tmdb.org/t/p/",
+        size: "/w342",
+      },
     };
   },
   methods: {
@@ -19,18 +23,23 @@ export default {
   <h2>MOVIES:</h2>
   <!--per ogni film lista con info-->
   <ul v-for="movie in store.searchedMovie" :key="movie.id">
+    <img :src="posterUrl.baseUrl + posterUrl.size + movie.poster_path" alt="" />
     <li>{{ movie.title }}</li>
     <li>{{ movie.original_title }}</li>
     <li v-if="hasFlag(movie.original_language)">
-      <img :src="'./img/' + movie.original_language + '.png'" alt="" />
+      <img
+        class="img-size"
+        :src="'./img/' + movie.original_language + '.png'"
+        alt=""
+      />
     </li>
     <li>{{ movie.vote_average }}</li>
   </ul>
 </template>
 
 <style>
-img {
-  height: 50px;
-  width: 50px;
+.img-size {
+  height: 20px;
+  width: 20px;
 }
 </style>

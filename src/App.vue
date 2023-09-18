@@ -24,9 +24,20 @@ export default {
         .then((response) => {
           /*info utili del film*/
           const moviesData = response.data.results.map((searchedMovie) => {
-            const { title, original_title, original_language, vote_average } =
-              searchedMovie;
-            return { title, original_title, original_language, vote_average };
+            const {
+              title,
+              original_title,
+              original_language,
+              vote_average,
+              poster_path,
+            } = searchedMovie;
+            return {
+              title,
+              original_title,
+              original_language,
+              vote_average,
+              poster_path,
+            };
           });
           store.searchedMovie = moviesData;
         });
@@ -41,9 +52,20 @@ export default {
         })
         .then((response) => {
           const seriesData = response.data.results.map((searchedSeries) => {
-            const { name, original_name, original_language, vote_average } =
-              searchedSeries;
-            return { name, original_name, original_language, vote_average };
+            const {
+              name,
+              original_name,
+              original_language,
+              vote_average,
+              poster_path,
+            } = searchedSeries;
+            return {
+              name,
+              original_name,
+              original_language,
+              vote_average,
+              poster_path,
+            };
           });
           store.searchedSeries = seriesData;
         });
