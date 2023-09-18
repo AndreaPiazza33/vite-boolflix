@@ -16,6 +16,7 @@ export default {
 </script>
 
 <template>
+  <h2>MOVIES:</h2>
   <!--per ogni film lista con info-->
   <ul v-for="movie in store.searchedMovie" :key="movie.id">
     <li>{{ movie.title }}</li>
@@ -29,7 +30,7 @@ export default {
 
 <style>
 img {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 </style>

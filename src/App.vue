@@ -31,6 +31,27 @@ export default {
           store.searchedMovie = moviesData;
         });
     },
+    fetchSeries(queryString) {
+      axios
+        .get("https://api.themoviedb.org/3/search/tv?", {
+          params: {
+            query: queryString,
+            api_key: "e20fa320327eeb0c5e15c0385a71f9e5",
+          },
+        })
+        .then((response) => {
+          const seriesData = response.data.results.map((searchedSeries) => {
+            const { name, original_name, original_language, vote_average } =
+              searchedSeries;
+            return { name, original_name, original_language, vote_average };
+          });
+          store.searchedSeries = seriesData;
+        });
+    },
+    handleSearch(querystring) {
+      this.fetchMovie(querystring);
+      this.fetchSeries(querystring);
+    },
   },
 
   /*componenti */
@@ -39,7 +60,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @filtered-search="fetchMovie"></AppHeader>
+  <AppHeader @filtered-search="handleSearch"></AppHeader>
   <AppMain></AppMain>
 </template>
 

@@ -6,6 +6,11 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <!--contenitore serie-->
+  <div>
+    <AppSeriesList></AppSeriesList>
+  </div>
+</template>
 
 <style></style>
